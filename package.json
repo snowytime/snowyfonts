@@ -1,12 +1,13 @@
 {
   "name": "snowyyfonts",
+  "repository": "git://github.com/snowytime/snowyfonts.git",
   "version": "1.0.1",
   "description": "",
   "fonts": "build/fonts/index.js",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "build": "tsc --module commonjs --outDir build && rollup -c",
-    "publish": "func() { tsc --module commonjs --outDir build && rollup -c && git add . && git commit -m ${1:-standard} && git push origin master && npm version ${2:-patch} || patch && npm publish; }; func"
+    "publish": "tsc --module commonjs --outDir build && rollup -c && git add . && git commit -m 'standard' && git push origin master && npm version patch && npm publish"
   },
   "author": "",
   "license": "ISC",
