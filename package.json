@@ -5,6 +5,10 @@
   "description": "",
   "fonts": "build/fonts/index.js",
   "main": "build/index.js",
+  "module": "build/index.js",
+  "files": [
+    "build"
+  ],
   "scripts": {
     "build": "tsc --module commonjs --outDir build && rollup -c",
     "publish": "tsc --module commonjs --outDir build && rollup -c && git add . && git commit -m 'standard' && git push origin master && npm version patch && npm publish"
