@@ -139,6 +139,4 @@ export const fontStyles = css`
         url(${Veronica_VF_ttf}) format('truetype')
     }
 
-    /* variable font fallback */
-
 `;
