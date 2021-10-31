@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "tsc --module commonjs --outDir build && rollup -c",
-    "publish": "tsc --module commonjs --outDir build && rollup -c && git add . && git commit -m 'standard' && git push origin master && npm version patch && npm publish"
+    "go": "tsc --module commonjs --outDir build && rollup -c && git add . && git commit -m 'standard' && git push origin master && npm version patch && npm publish"
   },
   "author": "",
   "license": "ISC",
