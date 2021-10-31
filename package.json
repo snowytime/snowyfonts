@@ -1,11 +1,23 @@
 {
-  "name": "snowyfonts",
+  "name": "snowyyfonts",
   "version": "1.0.0",
   "description": "",
+  "fonts": "build/fonts/index.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --module commonjs --outDir build && rollup -c",
+    "publish": "func() { tsc --module commonjs --outDir build && rollup -c && git add . && git commit -m ${1:-standard} && git push origin master && npm version ${2:-patch} || patch && npm publish; }; func"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-url": "^6.1.0",
+    "@types/styled-components": "^5.1.15",
+    "rollup": "^2.58.3",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "styled-components": "^5.3.3"
+  }
 }
